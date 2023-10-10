@@ -9,9 +9,8 @@ const homeController = new HomeController();
 // All the paths to the controller methods.
 
 homeRouter.get("/",(req,res)=>{
-    res.render("home")
+    res.render("home", {HostUrl: req.headers.host})
 })
 homeRouter.get("/allquestions", homeController.getAllQuestions);
-
 
 export default homeRouter;
