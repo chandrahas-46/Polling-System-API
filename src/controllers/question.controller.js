@@ -1,4 +1,3 @@
-// const Option = require("../../models/option");
 import mongoose from "mongoose";
 import {questionSchema} from '../models/question.schema.js'
 import {optionSchema} from '../models/option.schema.js'
@@ -25,12 +24,6 @@ export default class QuestionController {
             return res.status(500).send("Something went wrong");
         }
     }
-    /*
-    "Question": {
-        "title": "What is javascript",
-        "options": [],
-        "_id": "652507488c79764b4e2b4ab7"
-    }*/
 
     // *********************************** Add options to a specific question ***************************************
     async addOptions(req, res){
@@ -42,15 +35,12 @@ export default class QuestionController {
             }
             
             let question = await QuestionModel.findById(questionId);
-            // console.log("Host: ",req.headers.host);
             if(question){
                 // question.options.push({text, votes:0});
                 let option = await OptionModel.create({
                     question: questionId,
                     text: text,
                     votes: 0,
-                    // link_to_vote: `${process.env.APP_URL}/options/${uniqueId}/add_vote`,
-                    // link_to_vote: `https://${req.headers.host}/options/${uniqueId}/add_vote`,
                 });
 
                 option.link_to_vote = `https://${req.headers.host}/options/${option._id.toString()}/add_vote`;
@@ -68,18 +58,6 @@ export default class QuestionController {
             return res.status(500).send("Something went wrong");
         }
     }
-    /*
-    "Option": {
-        "text": "option1",
-        "votes": 0,
-        "question": "652507488c79764b4e2b4ab7",
-        "_id": "652517e2fa0f363903bc7f90",
-        "createdAt": "2023-10-10T09:22:42.429Z",
-        "updatedAt": "2023-10-10T09:22:42.429Z",
-        "__v": 0,
-        "link_to_vote": "https://localhost:3000/options/652517e2fa0f363903bc7f90/add_vote"
-    }
-     */
 
     // *********************************** Delete question ***************************************
     async deleteQuestion(req, res){
