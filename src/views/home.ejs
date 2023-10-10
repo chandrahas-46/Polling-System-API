@@ -1,0 +1,73 @@
+
+<div class="container-fluid mb-5">
+    <div class="row mt-0">
+        <div class="col-md-12" style="background-color: lightgray">
+            <h2 class="text-center fw-bold text-danger text-decoration-underline ">Polling System API</h2>
+        </div>
+    </div>
+
+    <!-- View a question with it’s options and all the votes given to it ********** -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" style="background-color: #92dbc1;">
+            <h5> <b>View all question with it's options and all the votes</b> </h5>
+            <button class="btn btn-success btn-sm">Method GET</button>
+            <a href="http://localhost:3000/allquestions"><span class="ms-5 fst-italic fw-bold"> http://localhost:3000/allquestions </span></a>
+        </div>
+    </div>
+
+    <!-- ************  Create a question ********** -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" style="background-color: lightcyan;">
+            <h5>1. Create a question</h5>
+            <button class="btn btn-warning btn-sm">Method POST</button>
+            <span class="ms-5 fst-italic fw-bold"> http://localhost:3000/questions/create </span>
+        </div>
+    </div>
+
+    <!-- ************ Add optionss to a question ********** -->
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-8" style="background-color: #fcfcd9;">
+            <h5>2. Add options to a question</h5>
+            <button class="btn btn-warning  btn-sm">Method POST</button>
+            <span class="ms-5 fst-italic fw-bold"> http://localhost:3000/questions/:id/options/create </span>
+        </div>
+    </div>
+
+    <!-- *******************  Delete a question **************** -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" style="background-color: lightcyan;">
+            <h5>3. Delete a question</h5>
+            <ul><li>A question can not be deleted if one of it's options has votes</li></ul>
+            <button class="btn btn-danger btn-sm">Method DELETE</button>
+            <span class="ms-5 fst-italic fw-bold">http://localhost:3000/questions/:id/delete </span>
+        </div>
+    </div>
+
+    <!--********* View a question with options and all the votes given to it ********** -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" style="background-color: #fcfcd9;">
+            <h5>4. View a question with it's options and all the votes </h5>
+            <button class="btn btn-success btn-sm">Method GET</button>
+            <span class="ms-5 fst-italic fw-bold"> http://localhost:3000/allquestions </span>
+        </div>
+    </div>
+
+    <!-- ************  Delete an option ********** -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" style="background-color: lightcyan;">
+            <h5>5. Delete an option</h5>
+            <ul><li>An option can't be deleted if it has even one vote given to it</li></ul>
+            <button class="btn btn-danger btn-sm">Method DELETE</button>
+            <span class="ms-5 fst-italic fw-bold bg-light"> http://localhost:3000/options/:id/delete </span>
+        </div>
+    </div>
+
+    <!-- ************ Add a vote to an option of question ********** -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" style="background-color: #fcfcd9;">
+            <h5>6. Add a vote to an option of question</h5>
+            <button class="btn btn-primary btn-sm">Method POST</button>
+            <span class="ms-5 fst-italic fw-bold"> http://localhost:3000/options/:id/add_vote </span>
+        </div>
+    </div>
+</div>
